@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>cloudflared</Name>
+  <Repository>crazymax/cloudflared</Repository>
+  <Registry>https://hub.docker.com/r/cloudflare/cloudflared/</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>https://coderage.pro/unraid/cloudflared-ca/</Support>
+  <Project>https://github.com/cloudflare/cloudflared</Project>
+  <Overview>Cloudflared is a tunneling deamon for Cloudflare</Overview>
+  <Category>Tools:</Category>
+  <TemplateURL>https://github.com/SteaceP/unraid-CA-templates/cloudflared.xml</TemplateURL>
+  <Icon>https://github.com/SteaceP/unraid-CA-templates/icons/cloudflared.png</Icon>
+  <DonateText>All kinds of contributions are welcome &#x1F64C;! The most basic way to show your support is to star &#x1F31F; the project, or to raise issues &#x1F4AC; But we're not gonna lie to each other, I'd rather you buy me a beer or two &#x1F37B;!</DonateText>
+  <DonateLink>https://www.patreon.com/coderage</DonateLink>
+  <Config Name="Listen port for the DNS over HTTPS proxy server" Target="5053" Default="5053" Mode="udp" Description="Container Port: 5053" Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="Listen port for metrics reporting" Target="49312" Default="49312" Mode="tcp" Description="Container Port: 49312" Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="Upstream endpoint URL" Target="TUNNEL_DNS_UPSTREAM" Default="https://1.1.1.1/dns-query,https://1.0.0.1/dns-query" Description="Container Variable: TUNNEL_DNS_UPSTREAM Upstream endpoint URL, you can specify multiple endpoints for redundancy" Type="Variable" Display="always" Required="false" Mask="false"/>
+</Container>
